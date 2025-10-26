@@ -27,24 +27,34 @@
     \end{BulletTight}
 \end{frame}
 
-% ======================================================
-% SLIDE 10: MỤC TIÊU NGHIÊN CỨU
-% ======================================================
+% --- SLIDE 11 (REFACED) ---
 \begin{frame}
-    \frametitle{Mục tiêu nghiên cứu}
-    \SubTitle{Hướng đến hệ kiểm thử thông minh và đáng tin cậy}
-
-    \begin{BulletTight}
-        \item Xây dựng hệ đa tác tử tích hợp LLM cho kiểm thử tự động.
-        \item Xác định vai trò và cơ chế phối hợp linh hoạt.
-        \item Nghiên cứu sâu một tác tử tiêu biểu để tối ưu hiệu năng.
-        \item Cải thiện giao tiếp và giảm lỗi trong kiểm thử phối hợp.
-        \item Tối ưu \textbf{HITL} để tận dụng tri thức con người.
-        \item Giảm chi phí, tăng độ chính xác và khả năng mở rộng.
-        \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
-        \textbf{→ Mục tiêu:} kiểm thử thông minh, tự điều chỉnh, tin cậy hơn.
-    \end{BulletTight}
+  \frametitle{Mục tiêu nghiên cứu}
+  \SubTitle{Hệ kiểm thử thông minh và đáng tin cậy}
+  \begin{BulletTight}
+    \item \textbf{Xây dựng hệ đa tác tử:}
+      \begin{BulletTight}
+        \item Xác định vai trò chuyên biệt (Planner, Executor, ...).
+        \item Thiết kế cơ chế phối hợp linh hoạt, hiệu quả.
+      \end{BulletTight}
+    \item \textbf{Nâng cao giao tiếp và độ tin cậy:}
+      \begin{BulletTight}
+        \item Giảm nhầm lẫn ngữ cảnh và mâu thuẫn thông tin.
+        \item Hạn chế "ảo giác" (hallucination) thông qua kiểm tra chéo.
+      \end{BulletTight}
+    \item \textbf{Tối ưu hóa Human-in-the-Loop (HITL):}
+      \begin{BulletTight}
+        \item Xác định thời điểm can thiệp của con người.
+        \item Tận dụng tri thức con người, giảm thiên kiến.
+      \end{BulletTight}
+    \item \textbf{Tối ưu hiệu năng và chi phí:}
+      \begin{BulletTight}
+        \item Giảm số lượng lời gọi LLM, định tuyến mô hình thông minh.
+      \end{BulletTight}
+  \end{BulletTight}
 \end{frame}
+
+
 
 % ======================================================
 % SLIDE: ĐỐI TƯỢNG VÀ PHẠM VI NGHIÊN CỨU
@@ -75,30 +85,31 @@
         \textbf{Tóm lược:} Nghiên cứu tập trung vào thiết kế cơ chế phối hợp đa tác tử và cải thiện độ tin cậy của kiểm thử tự động.
     \end{BulletTight}
 \end{frame}
-% ======================================================
-% SLIDE: PHƯƠNG PHÁP NGHIÊN CỨU – THIẾT KẾ THỰC NGHIỆM
-% ======================================================
+% --- SLIDE 13 (REFACED) ---
 \begin{frame}
-    \frametitle{Phương pháp nghiên cứu – Thiết kế thực nghiệm}
-
-    \begin{BulletTight}
-        \item \textbf{1. Khảo sát và phân tích:}
-        Tổng hợp các công trình trong và ngoài nước, xác định khoảng trống và định hướng nghiên cứu.
-
-        \item \textbf{2. Thiết kế mô hình tổng thể:}
-        Xây dựng khung hệ thống đa tác tử tích hợp LLM; xác định vai trò, giao tiếp và cơ chế phối hợp.
-
-        \item \textbf{3. Phát triển nguyên mẫu:}
-        Triển khai các tác tử chính (Planner, Executor, Evaluator, Coordinator) và thiết lập cơ chế HITL.
-
-        \item \textbf{4. Thực nghiệm và đánh giá:}
-        Kiểm thử thực tế, đo lường hiệu năng, độ chính xác, độ tin cậy và chi phí.
-        So sánh với baseline (hệ LLM đơn tác tử) để kiểm chứng hiệu quả.
-
-        \item \textbf{5. Hoàn thiện và tổng kết:}
-        Phân tích kết quả, rút ra tiêu chí tối ưu và đề xuất mô hình cải tiến.
-
-        \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
-        \textbf{Tiếp cận tổng thể:} kết hợp phân tích – thiết kế – thực nghiệm lặp, đảm bảo \textit{tính khoa học} và \textit{ứng dụng}.
-    \end{BulletTight}
+  \frametitle{Phương pháp nghiên cứu}
+  \SubTitle{Thiết kế thực nghiệm}
+  \begin{BulletTight}
+    \item \textbf{Khảo sát và phân tích:}
+      \begin{BulletTight}
+        \item Tổng hợp công trình, xác định khoảng trống nghiên cứu.
+      \end{BulletTight}
+    \item \textbf{Thiết kế mô hình:}
+      \begin{BulletTight}
+        \item Xây dựng kiến trúc đa tác tử và cơ chế giao tiếp.
+      \end{BulletTight}
+    \item \textbf{Phát triển nguyên mẫu:}
+      \begin{BulletTight}
+        \item Triển khai các tác tử chính, tích hợp cơ chế HITL.
+      \end{BulletTight}
+    \item \textbf{Thực nghiệm và đánh giá:}
+      \begin{BulletTight}
+        \item Đo lường hiệu năng, độ chính xác, so sánh với baseline.
+      \end{BulletTight}
+    \item \textbf{Hoàn thiện và tổng kết:}
+      \begin{BulletTight}
+        \item Phân tích kết quả, tối ưu mô hình, hoàn thiện luận án.
+      \end{BulletTight}
+  \end{BulletTight}
 \end{frame}
+
