@@ -1,0 +1,47 @@
+% =============== SLIDE: KIẾN TRÚC ĐỀ XUẤT ===============
+\begin{frame}
+    \frametitle{Giải pháp đề xuất}
+    \SubTitle{Kiến trúc hệ đa tác tử cho kiểm thử}
+    \begin{BulletTight}
+        \item Vai trò: \emph{Planner / Designer}, \emph{Executor}, \emph{Result Analyzer}, \emph{Coordinator}.
+        \item Giao tiếp chuẩn hoá (protocol) + bộ nhớ chung (shared memory).
+        \item Pipeline kiểm thử: sinh test → thực thi → phân tích kết quả → phản hồi.
+        \item Tối ưu từng tác tử; hỗ trợ web/API, mở rộng mobile.
+    \end{BulletTight}
+\end{frame}
+
+% =============== SLIDE: PHỐI HỢP & BỘ NHỚ ===============
+\begin{frame}
+    \frametitle{Giải pháp đề xuất}
+    \SubTitle{Phối hợp tác tử \& bộ nhớ dùng chung}
+    \begin{BulletTight}
+        \item Shared memory làm ngữ cảnh chung, lưu mục tiêu, trạng thái, giả thuyết.
+        \item Cross-check giữa tác tử trước khi chấp nhận kết quả.
+        \item Cơ chế đồng thuận khi phát hiện mâu thuẫn.
+        \item Kích hoạt HILT khi độ tin cậy dưới ngưỡng.
+    \end{BulletTight}
+\end{frame}
+
+% =============== SLIDE: GIẢM ẢO GIÁC & TIN CẬY ===============
+\begin{frame}
+    \frametitle{Giải pháp đề xuất}
+    \SubTitle{Giảm ảo giác \& tăng độ tin cậy}
+    \begin{BulletTight}
+        \item Self-checking \& nhóm phản biện (\emph{critic agents}).
+        \item Trích xuất bằng chứng bắt buộc trước khi kết luận.
+        \item Đo \emph{confidence} để quyết định tái kiểm tra hoặc HILT.
+        \item Nhật ký suy luận để truy vết \& cải thiện liên tục.
+    \end{BulletTight}
+\end{frame}
+
+% =============== SLIDE: HILT & TỐI ƯU CHI PHÍ ===============
+\begin{frame}
+    \frametitle{Giải pháp đề xuất}
+    \SubTitle{HILT \& tối ưu chi phí/hiệu năng}
+    \begin{BulletTight}
+        \item HILT theo ngưỡng rủi ro: chỉ can thiệp khi cần.
+        \item Dynamic model routing: model nhỏ cho tác vụ nhẹ, LLM mạnh cho tác vụ khó.
+        \item Cache kết quả; xử lý song song các tác vụ độc lập.
+        \item Tối ưu prompt để giảm token \& latency.
+    \end{BulletTight}
+\end{frame}

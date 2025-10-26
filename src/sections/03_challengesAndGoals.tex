@@ -1,0 +1,104 @@
+% ======================================================
+% SLIDE 9: THÁCH THỨC CỦA ĐỀ TÀI
+% ======================================================
+\begin{frame}
+    \frametitle{Thách thức của đề tài}
+    \SubTitle{Những rào cản trong nghiên cứu hệ đa tác tử}
+
+    \begin{BulletTight}
+        \item \textbf{Ảo giác (Hallucination):}
+        Tác tử sinh phản hồi sai lệch, gây lỗi kiểm thử.%
+        \src{1}{Fan, Y. et al. (2024). \textit{Cooperative MA-RL for Web Testing}. ASE.}
+
+        \item \textbf{Giao tiếp:}
+        Dễ mất ngữ cảnh, lan truyền lỗi, phối hợp chưa hiệu quả.%
+        \src{2}{He, J. et al. (2025). \textit{LLM-Based Multi-Agent Systems}. TOSEM.}
+
+        \item \textbf{HITL:}
+        Phản hồi con người thiên kiến, giám sát tốn chi phí.%
+        \src{3}{Xu, Q. et al. (2025). \textit{Hallucination to Consensus}. arXiv.}
+
+        \item \textbf{Hiệu năng:}
+        Nhiều LLM song song, tốn tài nguyên và tăng độ trễ.%
+        \src{4}{Hong, S. et al. (2024). \textit{MetaGPT}. ICLR.}
+
+        \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
+        \textbf{→ Cần hệ đa tác tử ổn định, giao tiếp hiệu quả và có HITL.}
+    \end{BulletTight}
+\end{frame}
+
+% ======================================================
+% SLIDE 10: MỤC TIÊU NGHIÊN CỨU
+% ======================================================
+\begin{frame}
+    \frametitle{Mục tiêu nghiên cứu}
+    \SubTitle{Hướng đến hệ kiểm thử thông minh và đáng tin cậy}
+
+    \begin{BulletTight}
+        \item Xây dựng hệ đa tác tử tích hợp LLM cho kiểm thử tự động.
+        \item Xác định vai trò và cơ chế phối hợp linh hoạt.
+        \item Nghiên cứu sâu một tác tử tiêu biểu để tối ưu hiệu năng.
+        \item Cải thiện giao tiếp và giảm lỗi trong kiểm thử phối hợp.
+        \item Tối ưu \textbf{HITL} để tận dụng tri thức con người.
+        \item Giảm chi phí, tăng độ chính xác và khả năng mở rộng.
+        \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
+        \textbf{→ Mục tiêu:} kiểm thử thông minh, tự điều chỉnh, tin cậy hơn.
+    \end{BulletTight}
+\end{frame}
+
+% ======================================================
+% SLIDE: ĐỐI TƯỢNG VÀ PHẠM VI NGHIÊN CỨU
+% ======================================================
+\begin{frame}
+    \frametitle{Đối tượng và phạm vi nghiên cứu}
+
+    \begin{BulletTight}
+        \item \textbf{Đối tượng nghiên cứu:}
+        \begin{itemize}
+            \setlength{\itemsep}{0.3em}
+            \item Hệ thống đa tác tử (Multi-Agent System) tích hợp mô hình ngôn ngữ lớn (LLM) cho kiểm thử phần mềm tự động.
+            \item Các tác tử chính: Planner, Executor, Evaluator, Coordinator và HITL Agent.
+            \item Cơ chế phối hợp, giao tiếp và phản hồi giữa các tác tử trong quá trình kiểm thử.
+        \end{itemize}
+
+        \vspace{0.7em}
+        \item \textbf{Phạm vi nghiên cứu:}
+        \begin{itemize}
+            \setlength{\itemsep}{0.3em}
+            \item Ứng dụng cho kiểm thử phần mềm web và di động.
+            \item Tập trung phát triển và phân tích sâu \textbf{một tác tử tiêu biểu} nhằm tối ưu hiệu năng và khả năng phối hợp.
+            \item Không mở rộng sang kiểm thử hiệu năng hay bảo mật.
+        \end{itemize}
+
+        \vspace{0.6em}
+        \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
+        \textbf{Tóm lược:} Nghiên cứu tập trung vào thiết kế cơ chế phối hợp đa tác tử và cải thiện độ tin cậy của kiểm thử tự động.
+    \end{BulletTight}
+\end{frame}
+% ======================================================
+% SLIDE: PHƯƠNG PHÁP NGHIÊN CỨU – THIẾT KẾ THỰC NGHIỆM
+% ======================================================
+\begin{frame}
+    \frametitle{Phương pháp nghiên cứu – Thiết kế thực nghiệm}
+
+    \begin{BulletTight}
+        \item \textbf{1. Khảo sát và phân tích:}
+        Tổng hợp các công trình trong và ngoài nước, xác định khoảng trống và định hướng nghiên cứu.
+
+        \item \textbf{2. Thiết kế mô hình tổng thể:}
+        Xây dựng khung hệ thống đa tác tử tích hợp LLM; xác định vai trò, giao tiếp và cơ chế phối hợp.
+
+        \item \textbf{3. Phát triển nguyên mẫu:}
+        Triển khai các tác tử chính (Planner, Executor, Evaluator, Coordinator) và thiết lập cơ chế HITL.
+
+        \item \textbf{4. Thực nghiệm và đánh giá:}
+        Kiểm thử thực tế, đo lường hiệu năng, độ chính xác, độ tin cậy và chi phí.
+        So sánh với baseline (hệ LLM đơn tác tử) để kiểm chứng hiệu quả.
+
+        \item \textbf{5. Hoàn thiện và tổng kết:}
+        Phân tích kết quả, rút ra tiêu chí tối ưu và đề xuất mô hình cải tiến.
+
+        \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
+        \textbf{Tiếp cận tổng thể:} kết hợp phân tích – thiết kế – thực nghiệm lặp, đảm bảo \textit{tính khoa học} và \textit{ứng dụng}.
+    \end{BulletTight}
+\end{frame}

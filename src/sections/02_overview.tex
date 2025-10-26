@@ -1,0 +1,115 @@
+% ======================================================
+% SLIDE 4: BỐI CẢNH VÀ ĐỘNG CƠ
+% ======================================================
+\begin{frame}
+    \frametitle{Giới thiệu tổng quan}
+    \SubTitle{Bối cảnh và động cơ}
+    \begin{BulletTight}
+        \item Kiểm thử là giai đoạn then chốt đảm bảo chất lượng phần mềm.
+        \item Chi phí sửa lỗi sau phát hành cao gấp 10–100 lần phát hiện sớm.%
+        \src{1}{Boehm, B. W. (1981). \textit{Software engineering economics}. Englewood Cliffs, NJ: Prentice-Hall.}
+        \item Phần mềm ngày càng phức tạp, thay đổi nhanh, khó bao phủ kiểm thử toàn diện.
+        \item Kiểm thử thủ công tốn kém, phụ thuộc con người.
+        \item Tự động hóa kiểm thử trở thành xu hướng tất yếu.
+        \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
+        Cần hướng đến phương pháp kiểm thử \textit{thông minh, thích ứng và hiểu ngữ cảnh.}
+    \end{BulletTight}
+\end{frame}
+
+% ======================================================
+% SLIDE 5: GIAI ĐOẠN TRƯỚC LLM
+% ======================================================
+\begin{frame}
+    \frametitle{Giới thiệu tổng quan}
+    \SubTitle{Giai đoạn trước khi LLM bùng nổ}
+
+    \begin{BulletTight}
+        \item Kiểm thử chủ yếu dựa vào kịch bản thủ công.
+        \item Một số mô hình học tăng cường sinh test tự động.%
+        \src{2}{Nguyen, A., Le, B., \& Nguyen, V. (2019). Prioritizing automated UI tests using reinforcement learning. \textit{Proceedings of PROMISE}, 56–65.}
+        \item Các mô hình này khó thích ứng khi phần mềm thay đổi nhanh.
+        \item Thiếu khả năng hiểu ngữ nghĩa và bối cảnh kiểm thử.
+        \item Độ bao phủ logic thấp, dễ bỏ sót lỗi quan trọng.
+        \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
+        Giới hạn về tự động hóa và khả năng hiểu ngữ cảnh.
+    \end{BulletTight}
+\end{frame}
+
+% ======================================================
+% SLIDE 6: GIAI ĐOẠN LLM BÙNG NỔ
+% ======================================================
+\begin{frame}
+    \frametitle{Giới thiệu tổng quan}
+    \SubTitle{Các nghiên cứu tiêu biểu trong giai đoạn LLM}
+
+    \begin{BulletTight}
+        \item InferFix: LLM hiểu mã và tự sửa lỗi logic.%
+        \src{3}{Jin, M. et al. (2023). InferFix: End-to-end program repair with LLMs. \textit{ESEC/FSE}, 1646–1656.}
+        \item Guardian, GPTDroid: mở rộng kiểm thử UI theo hành vi người dùng.%
+        \src{4}{Ran, D. et al. (2024). Guardian: A runtime framework for LLM-based UI exploration. \textit{ISSTA}, 958–970.}
+        \item GPT, Grok, Gemini: sinh test theo ngữ cảnh, hướng kiểm thử ngữ nghĩa.
+        \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
+        LLM tạo bước tiến lớn trong tự động hóa kiểm thử.
+    \end{BulletTight}
+\end{frame}
+
+% ======================================================
+% SLIDE 7: HỆ LLM ĐƠN TÁC TỬ
+% ======================================================
+\begin{frame}
+    \frametitle{Giới thiệu tổng quan}
+    \SubTitle{Hệ LLM đơn tác tử: ưu và hạn chế}
+
+    \begin{BulletTight}
+        \item Dễ triển khai, hiệu quả cho các tác vụ riêng lẻ.
+        \item Có khả năng hiểu ngữ cảnh và sinh test hợp lý.
+        \item Một tác tử xử lý toàn bộ quy trình, thiếu phối hợp.%
+        \src{5}{Fan, Y. et al. (2024). Can cooperative multi-agent reinforcement learning boost automatic web testing? \textit{ASE}, 14–26.}
+        \item Dễ lặp hành động, bỏ sót lỗi hoặc “ảo giác” mục tiêu.%
+        \src{6}{Xu, Q. et al. (2025). Hallucination to consensus: Multi-agent LLMs for test generation. \textit{arXiv:2506.02943}.}
+        \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
+        Thiếu phối hợp — chưa phù hợp cho kiểm thử quy mô lớn, đa nhiệm.
+    \end{BulletTight}
+\end{frame}
+
+% ======================================================
+% SLIDE 8: HỆ ĐA TÁC TỬ – NGHIÊN CỨU TIÊU BIỂU
+% ======================================================
+\begin{frame}
+    \frametitle{Giới thiệu tổng quan}
+    \SubTitle{Các nghiên cứu tiêu biểu về hệ đa tác tử}
+
+    \begin{BulletTight}
+        \item MetaGPT: mô phỏng phát triển đa vai trò, nền tảng cho cộng tác tác tử.%
+        \src{7}{Hong, S. et al. (2024). MetaGPT: Meta programming for multi-agent collaboration. \textit{ICLR}.}
+        \item Feng et al.: phối hợp đa tác tử tăng bao phủ và hiệu quả kiểm thử.%
+        \src{8}{Feng, S. et al. (2025). Can cooperative multi-agent RL boost automatic web testing? \textit{ASE}.}
+        \item He et al.: cộng tác nhiều LLM giảm trùng lặp, nâng chất lượng test.%
+        \src{9}{He, J. et al. (2025). LLM-based multi-agent systems. \textit{TOSEM}.}
+        \item Xu et al.: cơ chế đồng thuận giảm “ảo giác”, tăng độ tin cậy.%
+        \src{10}{Xu, Q. et al. (2025). Hallucination to consensus: Multi-agent LLMs for test generation. \textit{arXiv}.}
+        \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
+        Hệ đa tác tử mở rộng kiểm thử, nhưng vẫn cần giám sát con người (HILT).
+    \end{BulletTight}
+\end{frame}
+
+% ======================================================
+% SLIDE 9: NHẬN ĐỊNH CHUNG
+% ======================================================
+\begin{frame}
+    \frametitle{Giới thiệu tổng quan}
+    \SubTitle{Nhận định chung về hệ đa tác tử}
+
+    \begin{BulletTight}
+        \item Đa tác tử giúp mở rộng phạm vi và tăng hiệu quả kiểm thử.%
+        \src{8}{Feng, S. et al. (2025). ASE.}
+        \item Cộng tác giữa tác tử giảm trùng lặp, nâng chất lượng.%
+        \src{9}{He, J. et al. (2025). TOSEM.}
+        \item Tuy nhiên, giao tiếp ngôn ngữ dễ gây hiểu sai và thiếu đồng thuận.%
+        \src{10}{Xu, Q. et al. (2025). arXiv.}
+        \item Cần cơ chế điều phối ổn định và phản hồi con người (HILT).%
+        \src{9}{He, J. et al. (2025). TOSEM.}
+        \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
+        Tiềm năng lớn nhưng cần tăng phối hợp và đảm bảo độ tin cậy.
+    \end{BulletTight}
+\end{frame}

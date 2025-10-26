@@ -1,0 +1,130 @@
+% ======================================================
+%                   GÓI CƠ BẢN / FONT
+% ======================================================
+\usepackage{fontspec} % dùng XeLaTeX hoặc LuaLaTeX
+\defaultfontfeatures{Ligatures=TeX}
+
+\setmainfont{Be Vietnam Pro}[
+    UprightFont = *,
+    ItalicFont  = * Italic,
+    BoldFont    = * SemiBold,
+    BoldFeatures = {Weight=600}
+]
+\setsansfont{Be Vietnam Pro}[
+    UprightFont = *,
+    ItalicFont  = * Italic,
+    BoldFont    = * SemiBold,
+    BoldFeatures = {Weight=600}
+]
+\setmonofont{JetBrains Mono}
+
+\usepackage[vietnamese]{babel}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{microtype}
+\usepackage{etoolbox}
+\usepackage{tikz}
+
+% ======================================================
+%                   MÀU / KIỂU CHỮ
+% ======================================================
+\definecolor{KHTN_BLUE}{RGB}{39,62,116}
+\definecolor{DarkGray}{RGB}{30,30,30}
+
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=DarkGray}
+\setbeamercolor{structure}{fg=KHTN_BLUE}
+\setbeamersize{text margin left=12mm, text margin right=12mm}
+\setbeamerfont{normal text}{size=\small}
+
+% ======================================================
+%                   TIÊU ĐỀ SLIDE
+% ======================================================
+\newfontfamily\TitleFont{Be Vietnam Pro SemiBold}[Weight=600]
+\setbeamercolor{frametitle}{fg=white,bg=KHTN_BLUE}
+\setbeamerfont{frametitle}{family=\TitleFont,series=\mdseries,size=\Large}
+\setbeamertemplate{frametitle}{
+    \vspace{-0.8ex}
+    \begin{beamercolorbox}[wd=\paperwidth,ht=3.1ex,dp=1.4ex,leftskip=1em,rightskip=1em]{frametitle}
+        \usebeamerfont{frametitle}\insertframetitle
+    \end{beamercolorbox}
+    \vspace{0.8ex}
+}
+
+% ======================================================
+%                   BULLET STYLE
+% ======================================================
+\setbeamertemplate{itemize item}{%
+    \raise0.15ex\hbox{\color{KHTN_BLUE!95}\normalsize\faCircle}%
+}
+\setbeamertemplate{itemize subitem}{%
+    \raise0.15ex\hbox{\color{KHTN_BLUE!80}\tiny\faChevronRight}%
+}
+\addtobeamertemplate{itemize/enumerate body begin}{}{\setlength{\itemsep}{0.35em}}
+
+\setbeamertemplate{navigation symbols}{}
+
+% ======================================================
+%                   FOOTLINE
+% ======================================================
+\makeatletter
+\defbeamertemplate*{footline}{khtnbar}{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=\paperwidth,ht=2.3ex,dp=1.0ex,rightskip=1.2em,bg=KHTN_BLUE,fg=white]{section in head/foot}%
+            \hfill {\footnotesize \insertframenumber/\inserttotalframenumber}
+        \end{beamercolorbox}%
+    }%
+}
+\setbeamertemplate{footline}[khtnbar]
+\makeatother
+
+% ======================================================
+%                   TRÍCH DẪN NGUỒN
+% ======================================================
+\AtBeginEnvironment{frame}{\setcounter{footnote}{0}}
+\renewcommand{\thefootnote}{\relax}
+\newcommand{\src}[2]{\textsuperscript{[#1]}\footnotetext{\tiny [#1] #2}}
+
+% ======================================================
+%                   MACRO TÙY CHỈNH
+% ======================================================
+\newcommand{\SchoolHeader}{%
+        {\large\bfseries Đại học Quốc gia TP. Hồ Chí Minh}\\[0.3em]
+    {\normalsize\bfseries Trường Đại học Khoa học Tự nhiên}\\[0.7em]
+    \includegraphics[height=0.9cm]{images/khtn_logo_white.png}\\[0.8em]
+}
+
+\newcommand{\Divider}{{\color{KHTN_BLUE}\rule{0.7\linewidth}{0.6pt}}}
+
+\newcommand{\SubTitle}[1]{%
+    \vspace{0.1em}
+    {\large\color{KHTN_BLUE}\itshape #1}\\[-0.15em]
+    {\color{KHTN_BLUE!85}\rule{0.12\paperwidth}{0.6pt}}
+    \vspace{0.4em}
+}
+
+\newenvironment{BulletTight}{%
+    \begin{itemize}\setlength{\itemsep}{0.28em}%
+}{\end{itemize}}
+
+\newcommand{\InfoRow}[4]{%
+    \begin{columns}[t,totalwidth=\textwidth]
+    \column{0.48\textwidth}
+    \raggedright\small
+    \textbf{Người dự tuyển:}~#1\\[-0.1em]\vspace{0.25em}%
+    \textbf{Ngành:}~#2
+    \column{0.52\textwidth}
+    \raggedleft\small
+    \textbf{Hướng dẫn chính:}~\mbox{#3}\\[-0.1em]\vspace{0.25em}%
+    \textbf{Đồng hướng dẫn:}~#4
+    \end{columns}
+}
+
+% ======================================================
+%                   THÔNG TIN CHUNG
+% ======================================================
+\title[Hệ thống đa tác tử cho kiểm thử phần mềm tự động]{HỆ THỐNG ĐA TÁC TỬ CHO KIỂM THỬ PHẦN MỀM TỰ ĐỘNG}
+\author[Lý Tuấn Anh]{Người dự tuyển: \textbf{Lý Tuấn Anh}\\[2pt]Hướng dẫn chính: PGS.TS. Nguyễn Văn Vũ\\Đồng hướng dẫn: TS. Châu Thành Đức}
+\date{}
