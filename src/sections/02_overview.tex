@@ -40,16 +40,14 @@
 % ======================================================
 \begin{frame}
     \frametitle{Giới thiệu tổng quan}
-    \SubTitle{Các nghiên cứu tiêu biểu trong giai đoạn LLM}
+    \SubTitle{Các nghiên cứu tiêu biểu ứng dụng LLM - đơn tác tử}
 
     \begin{BulletTight}
+        \item GPT, Grok, Gemini: sinh test theo ngữ cảnh, hiểu thực thi ngôn ngữ tự nhiên.
         \item InferFix: LLM hiểu mã và tự sửa lỗi logic.%
         \src{3}{Jin, M. et al. (2023). InferFix: End-to-end program repair with LLMs. \textit{ESEC/FSE}, 1646–1656.}
         \item Guardian, GPTDroid: mở rộng kiểm thử UI theo hành vi người dùng.%
         \src{4}{Ran, D. et al. (2024). Guardian: A runtime framework for LLM-based UI exploration. \textit{ISSTA}, 958–970.}
-        \item GPT, Grok, Gemini: sinh test theo ngữ cảnh, hướng kiểm thử ngữ nghĩa.
-        \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
-        LLM tạo bước tiến lớn trong tự động hóa kiểm thử.
     \end{BulletTight}
 \end{frame}
 
@@ -58,11 +56,13 @@
 % ======================================================
 \begin{frame}
     \frametitle{Giới thiệu tổng quan}
-    \SubTitle{Hệ LLM đơn tác tử: ưu và hạn chế}
+    \SubTitle {Các nghiên cứu tiêu biểu ứng dụng LLM - đơn tác tử}
 
     \begin{BulletTight}
         \item Dễ triển khai, hiệu quả cho các tác vụ riêng lẻ.
         \item Có khả năng hiểu ngữ cảnh và sinh test hợp lý.
+        \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
+        LLM tạo bước tiến lớn trong tự động hóa kiểm thử.
         \item Một tác tử xử lý toàn bộ quy trình, thiếu phối hợp.%
         \src{5}{Fan, Y. et al. (2024). Can cooperative multi-agent reinforcement learning boost automatic web testing? \textit{ASE}, 14–26.}
         \item Dễ lặp hành động, bỏ sót lỗi hoặc “ảo giác” mục tiêu.%
