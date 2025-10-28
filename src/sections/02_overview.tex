@@ -35,21 +35,20 @@
 \end{frame}
 
 % ======================================================
-% SLIDE 6: GIAI ĐOẠN LLM BÙNG NỔ
+% SLIDE: CÁC NGHIÊN CỨU TIÊU BIỂU – LLM ĐƠN TÁC TỬ
 % ======================================================
 \begin{frame}
     \frametitle{Giới thiệu tổng quan}
-    \SubTitle{Các nghiên cứu tiêu biểu ứng dụng LLM - đơn tác tử}
+    \SubTitle{Các nghiên cứu tiêu biểu – LLM đơn tác tử}
 
     \begin{BulletTight}
-        \item GPT, Grok, Gemini: sinh test theo ngữ cảnh, hiểu thực thi ngôn ngữ tự nhiên.
-        \item InferFix: LLM hiểu mã và tự sửa lỗi logic.%
-        \src{3}{Jin, M. et al. (2023). InferFix: End-to-end program repair with LLMs. \textit{ESEC/FSE}, 1646–1656.}
-        \item Guardian, GPTDroid: mở rộng kiểm thử UI theo hành vi người dùng.%
-        \src{4}{Ran, D. et al. (2024). Guardian: A runtime framework for LLM-based UI exploration. \textit{ISSTA}, 958–970.}
+        \item GPT, Grok, Gemini: sinh test theo ngữ cảnh và hiểu ngôn ngữ tự nhiên.
+        \item InferFix: LLM tự sửa lỗi logic, tăng chính xác kiểm thử.\src{3}{Jin, M. et al. (2023). \textit{InferFix}. ESEC/FSE, 1646–1656.}
+        \item Guardian, GPTDroid: khám phá UI theo hành vi người dùng, tăng bao phủ.\src{4}{Ran, D. et al. (2024). \textit{Guardian}. ISSTA, 958–970.}
+        \item KAT: kiểm thử API nhận biết phụ thuộc\src{5}{Le, Q.-T. et al. (2024). \textit{KAT: Dependency-aware automated API testing with LLMs}. Preprint.}
+        \item Constraint Mining: dùng LLM khai thác và kiểm thử ràng buộc API.\src{6}{Huynh, H., Le, Q.-T., Nguyen, T. N., \& Nguyen, V. (2024). \textit{Using LLM for mining and testing constraints in API testing}. ASE (EA), 2486–2487.}
     \end{BulletTight}
 \end{frame}
-
 % ======================================================
 % SLIDE 7: HỆ LLM ĐƠN TÁC TỬ
 % ======================================================
@@ -63,7 +62,7 @@
         \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
         LLM tạo bước tiến lớn trong tự động hóa kiểm thử.
         \item Một tác tử xử lý toàn bộ quy trình, thiếu phối hợp.%
-        \src{5}{Fan, Y. et al. (2024). Can cooperative multi-agent reinforcement learning boost automatic web testing? \textit{ASE}, 14–26.}
+        \src{7}{Fan, Y. et al. (2024). Can cooperative multi-agent reinforcement learning boost automatic web testing? \textit{ASE}, 14–26.}
         \item Dễ lặp hành động, bỏ sót lỗi hoặc “ảo giác” mục tiêu.%
         \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
         Thiếu phối hợp — chưa phù hợp cho kiểm thử quy mô lớn, đa nhiệm.
@@ -79,11 +78,11 @@
 
     \begin{BulletTight}
         \item Mô phỏng phát triển đa vai trò, nền tảng cho cộng tác tác tử.%
-        \src{7}{Hong, S. et al. (2024). MetaGPT: Meta programming for multi-agent collaboration. \textit{ICLR}.}
+        \src{8}{Hong, S. et al. (2024). MetaGPT: Meta programming for multi-agent collaboration. \textit{ICLR}.}
         \item Phối hợp đa tác tử tăng bao phủ và hiệu quả kiểm thử.%
-        \src{8}{Feng, S. et al. (2025). Can cooperative multi-agent RL boost automatic web testing? \textit{ASE}.}
+        \src{9}{Feng, S. et al. (2025). Can cooperative multi-agent RL boost automatic web testing? \textit{ASE}.}
         \item Cộng tác nhiều LLM giảm trùng lặp, nâng chất lượng test.%
-        \src{9}{He, J. et al. (2025). LLM-based multi-agent systems. \textit{TOSEM}.}
+        \src{10}{He, J. et al. (2025). LLM-based multi-agent systems. \textit{TOSEM}.}
         \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
         Hệ đa tác tử mở ra tiềm năng lớn cho kiểm thử tự động.
     \end{BulletTight}
@@ -109,7 +108,7 @@
     \SubTitle{Các nghiên cứu LLM–đa tác tử: kết quả \& hạn chế chính}
 
     \begin{BulletTight}
-        \item Đa tác tử tăng bao phủ và throughput kiểm thử.\src{10}{Feng, S., Wang, S., Fei, Z., Qin, Y., Li, H., \& Liu, Y. (2025). Can cooperative multi-agent RL boost automatic web testing? \textit{ASE}, 14–26.}
+        \item Đa tác tử tăng bao phủ và throughput kiểm thử.\src{11}{Feng, S., Wang, S., Fei, Z., Qin, Y., Li, H., \& Liu, Y. (2025). Can cooperative multi-agent RL boost automatic web testing? \textit{ASE}, 14–26.}
         \item Cộng tác giữa tác tử giảm trùng lặp, nâng chất lượng.\src{11}{He, J., Chen, Z., Zhou, K., \& Yu, Y. (2025). LLM-based multi-agent systems. \textit{ACM TOSEM}.}
         \item Giao tiếp ngôn ngữ dễ lệch ngữ nghĩa, thiếu đồng thuận.
         \item Cần cơ chế điều phối ổn định và phản hồi con người (HITL) để đảm bảo độ tin cậy.
