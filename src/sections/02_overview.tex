@@ -8,11 +8,11 @@
         \item Kiểm thử là giai đoạn then chốt đảm bảo chất lượng phần mềm.
         \item Chi phí sửa lỗi sau phát hành cao gấp 10–100 lần phát hiện sớm.%
         \src{1}{Boehm, B. W. (1981). \textit{Software engineering economics}. Englewood Cliffs, NJ: Prentice-Hall.}
-        \item Phần mềm ngày càng phức tạp, thay đổi nhanh, khó bao phủ kiểm thử toàn diện.
         \item Kiểm thử thủ công tốn kém, phụ thuộc con người.
+        \item Phần mềm ngày càng phức tạp, thay đổi nhanh, khó bao phủ kiểm thử toàn diện.
         \item Tự động hóa kiểm thử trở thành xu hướng tất yếu.
         \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
-        Cần hướng đến phương pháp kiểm thử \textit{thông minh, thích ứng và hiểu ngữ cảnh.}
+        Cần hướng đến phương pháp kiểm thử \textit{thông minh, thích ứng cao và có khả năng hiểu ngữ cảnh.}
     \end{BulletTight}
 \end{frame}
 
@@ -29,7 +29,6 @@
         \src{2}{Nguyen, A., Le, B., \& Nguyen, V. (2019). Prioritizing automated UI tests using reinforcement learning. \textit{Proceedings of PROMISE}, 56–65.}
         \item Các mô hình này khó thích ứng khi phần mềm thay đổi nhanh.
         \item Thiếu khả năng hiểu ngữ nghĩa và bối cảnh kiểm thử.
-        \item Độ bao phủ logic thấp, dễ bỏ sót lỗi quan trọng.
         \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
         Giới hạn về tự động hóa và khả năng hiểu ngữ cảnh.
     \end{BulletTight}
@@ -66,7 +65,6 @@
         \item Một tác tử xử lý toàn bộ quy trình, thiếu phối hợp.%
         \src{5}{Fan, Y. et al. (2024). Can cooperative multi-agent reinforcement learning boost automatic web testing? \textit{ASE}, 14–26.}
         \item Dễ lặp hành động, bỏ sót lỗi hoặc “ảo giác” mục tiêu.%
-        \src{6}{Xu, Q. et al. (2025). Hallucination to consensus: Multi-agent LLMs for test generation. \textit{arXiv:2506.02943}.}
         \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
         Thiếu phối hợp — chưa phù hợp cho kiểm thử quy mô lớn, đa nhiệm.
     \end{BulletTight}
@@ -77,19 +75,17 @@
 % ======================================================
 \begin{frame}
     \frametitle{Giới thiệu tổng quan}
-    \SubTitle{Các nghiên cứu tiêu biểu về hệ đa tác tử}
+    \SubTitle{Các nghiên cứu tiêu biểu ứng dụng LLM - đa tác tử}
 
     \begin{BulletTight}
-        \item MetaGPT: mô phỏng phát triển đa vai trò, nền tảng cho cộng tác tác tử.%
+        \item Mô phỏng phát triển đa vai trò, nền tảng cho cộng tác tác tử.%
         \src{7}{Hong, S. et al. (2024). MetaGPT: Meta programming for multi-agent collaboration. \textit{ICLR}.}
-        \item Feng et al.: phối hợp đa tác tử tăng bao phủ và hiệu quả kiểm thử.%
+        \item Phối hợp đa tác tử tăng bao phủ và hiệu quả kiểm thử.%
         \src{8}{Feng, S. et al. (2025). Can cooperative multi-agent RL boost automatic web testing? \textit{ASE}.}
-        \item He et al.: cộng tác nhiều LLM giảm trùng lặp, nâng chất lượng test.%
+        \item Cộng tác nhiều LLM giảm trùng lặp, nâng chất lượng test.%
         \src{9}{He, J. et al. (2025). LLM-based multi-agent systems. \textit{TOSEM}.}
-        \item Xu et al.: cơ chế đồng thuận giảm “ảo giác”, tăng độ tin cậy.%
-        \src{10}{Xu, Q. et al. (2025). Hallucination to consensus: Multi-agent LLMs for test generation. \textit{arXiv}.}
         \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
-        Hệ đa tác tử mở rộng kiểm thử, nhưng vẫn cần giám sát con người (HILT).
+        Hệ đa tác tử mở ra tiềm năng lớn cho kiểm thử tự động.
     \end{BulletTight}
 \end{frame}
 
@@ -110,18 +106,13 @@
 % ======================================================
 \begin{frame}
     \frametitle{Giới thiệu tổng quan}
-    \SubTitle{Nhận định chung về hệ đa tác tử}
+    \SubTitle{Các nghiên cứu LLM–đa tác tử: kết quả & hạn chế chính}
 
     \begin{BulletTight}
-        \item Đa tác tử giúp mở rộng phạm vi và tăng hiệu quả kiểm thử.%
-        \src{8}{Feng, S. et al. (2025). ASE.}
-        \item Cộng tác giữa tác tử giảm trùng lặp, nâng chất lượng.%
-        \src{9}{He, J. et al. (2025). TOSEM.}
-        \item Tuy nhiên, giao tiếp ngôn ngữ dễ gây hiểu sai và thiếu đồng thuận.%
-        \src{10}{Xu, Q. et al. (2025). arXiv.}
-        \item Cần cơ chế điều phối ổn định và phản hồi con người (HILT).%
-        \src{9}{He, J. et al. (2025). TOSEM.}
-        \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
-        Tiềm năng lớn nhưng cần tăng phối hợp và đảm bảo độ tin cậy.
+        \item Đa tác tử tăng bao phủ và throughput kiểm thử.\src{8}{Feng, S., Wang, S., Fei, Z., Qin, Y., Li, H., \& Liu, Y. (2025). Can cooperative multi-agent RL boost automatic web testing? \textit{ASE}, 14–26.}
+        \item Cộng tác giữa tác tử giảm trùng lặp, nâng chất lượng.\src{9}{He, J., Chen, Z., Zhou, K., \& Yu, Y. (2025). LLM-based multi-agent systems. \textit{ACM TOSEM}.}
+        \item Giao tiếp ngôn ngữ dễ lệch ngữ nghĩa, thiếu đồng thuận.
+        \item Cần cơ chế điều phối ổn định và phản hồi con người (HITL) để đảm bảo độ tin cậy.
+        \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}] Kết luận: tiềm năng lớn; trọng tâm cần giải quyết là giao tiếp, điều phối và HITL.
     \end{BulletTight}
 \end{frame}
