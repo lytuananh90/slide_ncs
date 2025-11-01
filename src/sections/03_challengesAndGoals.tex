@@ -8,13 +8,14 @@
         Tác tử sinh phản hồi sai lệch%
 
         \item \textbf{Giao tiếp:}
-        Dễ mất ngữ cảnh, lan truyền lỗi%
+        Dễ mất ngữ cảnh, lan truyền lỗi giữa các tác tử.
 
         \item \textbf{HITL:}
         Phản hồi con người thiên kiến, giám sát tốn chi phí.%
 
-        \item \textbf{Hiệu năng:}
-        Nhiều LLM song song, tốn tài nguyên và tăng độ trễ.%
+        \item \textbf Test dang regression: luong pho thông, chua den nhung logic phuc tap ()
+
+
 
     \end{BulletTight}
 \end{frame}
@@ -27,11 +28,10 @@
 
     \begin{BulletTight}
         \item Xây dựng hệ đa tác tử tích hợp LLM cho kiểm thử tự động.
-        \item Xác định vai trò và cơ chế phối hợp linh hoạt.
-        \item Nghiên cứu sâu một tác tử tiêu biểu để tối ưu hiệu năng.
-        \item Cải thiện giao tiếp và giảm lỗi trong kiểm thử phối hợp.
-        \item Tối ưu HITL để tận dụng tri thức con người.
-        \item Giảm chi phí, tăng độ chính xác và khả năng mở rộng.
+        \item Xác định vai trò và cơ chế phối hợp.
+        \item Nghiên cứu sâu một tác tử tiêu biểu để tối ưu hiệu năng, đảm bảo chiều sâu đề tài
+        \item Cải thiện giao tiếp và giảm lỗi trong kiểm thử
+        \item Đề xuất cơ chế HITL hiệu quả, nâng cao hiệu quả làm việc giữa người và tác tử
 
     \end{BulletTight}
 \end{frame}
@@ -63,29 +63,34 @@
 
     \end{BulletTight}
 \end{frame}
-% ======================================================
-% SLIDE: PHƯƠNG PHÁP NGHIÊN CỨU – THIẾT KẾ THỰC NGHIỆM
-% ======================================================
+% ------------------------------------------------------
+% SLIDE: Quy trình nghiên cứu và thực hiện (bản rút gọn)
+% ------------------------------------------------------
 \begin{frame}
     \frametitle{Phương pháp nghiên cứu}
 
+
     \begin{BulletTight}
-        \item \textbf{1. Khảo sát và phân tích:}
-        Tổng hợp các công trình trong và ngoài nước, xác định khoảng trống và định hướng nghiên cứu.
+        \item \textbf{Khảo sát và phân tích}
+        \begin{itemize}
+            \item Tổng hợp nghiên cứu trong/ngoài nước, xác định khoảng trống và hướng nghiên cứu
+        \end{itemize}
 
-        \item \textbf{2. Thiết kế mô hình tổng thể:}
-        Xây dựng khung hệ thống đa tác tử tích hợp LLM; xác định vai trò, giao tiếp và cơ chế phối hợp.
+        \item \textbf{Thiết kế hệ thống}
+        \begin{itemize}
+            \item Xây dựng kiến trúc đa tác tử tích hợp LLM, xác định vai trò và cơ chế giao tiếp
+        \end{itemize}
 
-        \item \textbf{3. Phát triển nguyên mẫu:}
-        Triển khai các tác tử chính (Planner, UI, API, Coordinator \ldots) và thiết lập cơ chế HITL.
+        \item \textbf{Phát triển framework}
+        \begin{itemize}
+            \item Triển khai các agent cốt lõi (Planner, UI, API, Coordinator, \ldots) và tích hợp HITL
+        \end{itemize}
 
-        \item \textbf{4. Thực nghiệm và đánh giá:}
-        Kiểm thử thực tế, đo lường hiệu năng, độ chính xác, độ tin cậy và chi phí.
-        So sánh với baseline (hệ LLM đơn tác tử - đa tác tử) để kiểm chứng hiệu quả.
-
-        \item \textbf{5. Hoàn thiện và tổng kết:}
-        Phân tích kết quả, rút ra tiêu chí tối ưu và đề xuất mô hình cải tiến.
-
-
+        \item \textbf{Thực nghiệm và đánh giá}
+        \begin{itemize}
+            \item Kiểm thử trên bài toán thực tế, đo hiệu năng, độ chính xác, ổn định
+            \item So sánh với baseline (LLM đơn tác tử và đa tác tử)
+        \end{itemize}
     \end{BulletTight}
+
 \end{frame}
