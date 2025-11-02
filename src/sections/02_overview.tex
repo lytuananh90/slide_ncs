@@ -1,131 +1,132 @@
-% =============== SLIDE: KIẾN TRÚC ĐỀ XUẤT ===============
-
+% ======================================================
+% SLIDE: GIỚI THIỆU TỔNG QUAN (Hình + bullet)
+% ======================================================
 \begin{frame}
     \frametitle{Giới thiệu tổng quan}
 
     \centering
-    \includegraphics[width=\linewidth,height=0.68\textheight,keepaspectratio]{images/manual_auto}
+    % 👉 Giảm tỉ lệ hình để đủ chỗ cho nội dung
+    \includegraphics[width=0.9\linewidth,height=0.50\textheight,keepaspectratio]{images/manual_auto}
+
+    \vspace{0.4em}
+    \small \textbf{Hình 1:} Các phương pháp kiểm thử trong phát triển phần mềm hiện đại
 
     \vspace{0.6em}
-    \small \textbf{Hình 1:} Các phương pháp kiểm thử trong phát triển phần mềm hiện đại
+    \begin{BulletTight}
+        \item Kiểm thử là giai đoạn then chốt đảm bảo chất lượng phần mềm.
+        \item Chi phí sửa lỗi sau phát hành cao gấp 10–100 lần phát hiện sớm.\src{1}{Boehm, B. W. (1981). \textit{Software engineering economics}. Prentice-Hall.}
+    \end{BulletTight}
 
 \end{frame}
 % =======================================================
 
-% ======================================================
-% SLIDE 4: BỐI CẢNH VÀ ĐỘNG CƠ
-% ======================================================
+% =============== SLIDE: Thách thức của kiểm thử hiện đại ===============
+
 \begin{frame}
     \frametitle{Giới thiệu tổng quan}
-    \SubTitle{Bối cảnh và động cơ}
-    \begin{BulletTight}
-        \item Kiểm thử là giai đoạn then chốt đảm bảo chất lượng phần mềm.
-        \item Chi phí sửa lỗi sau phát hành cao gấp 10–100 lần phát hiện sớm.%
-        \src{1}{Boehm, B. W. (1981). \textit{Software engineering economics}. Englewood Cliffs, NJ: Prentice-Hall.}
-        \item Kiểm thử thủ công tốn kém, phụ thuộc con người.
-        \item Phần mềm ngày càng phức tạp, thay đổi nhanh, khó bao phủ kiểm thử toàn diện.
-        \item Tự động hóa kiểm thử trở thành xu hướng tất yếu.
-        \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
-        Cần hướng đến phương pháp kiểm thử \textit{thông minh, thích ứng cao và có khả năng hiểu ngữ cảnh.}
-    \end{BulletTight}
-\end{frame}
-
-% ======================================================
-% SLIDE 5: GIAI ĐOẠN TRƯỚC LLM
-% ======================================================
-\begin{frame}
-    \frametitle{Giới thiệu tổng quan}
-    \SubTitle{Giai đoạn trước khi LLM bùng nổ}
-
-    \begin{BulletTight}
-        \item Kiểm thử chủ yếu dựa vào kịch bản thủ công.
-        \item Một số mô hình học tăng cường sinh test tự động.%
-        \src{2}{Nguyen, A., Le, B., \& Nguyen, V. (2019). Prioritizing automated UI tests using reinforcement learning. \textit{Proceedings of PROMISE}, 56–65.}
-        \item Các mô hình này khó thích ứng khi phần mềm thay đổi nhanh.
-        \item Thiếu khả năng hiểu ngữ nghĩa và bối cảnh kiểm thử.
-        \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
-        Giới hạn về tự động hóa và khả năng hiểu ngữ cảnh.
-    \end{BulletTight}
-\end{frame}
-
-% ======================================================
-% SLIDE: CÁC NGHIÊN CỨU TIÊU BIỂU – LLM ĐƠN TÁC TỬ
-% ======================================================
-\begin{frame}
-    \frametitle{Giới thiệu tổng quan}
-    \SubTitle{Các nghiên cứu tiêu biểu – LLM đơn tác tử}
-
-    \begin{BulletTight}
-        \item GPT, Grok, Gemini: sinh test theo ngữ cảnh và hiểu ngôn ngữ tự nhiên.
-        \item InferFix: LLM tự sửa lỗi logic, tăng chính xác kiểm thử.\src{3}{Jin, M. et al. (2023). \textit{InferFix}. ESEC/FSE, 1646–1656.}
-        \item Guardian, GPTDroid: khám phá UI theo hành vi người dùng, tăng bao phủ.\src{4}{Ran, D. et al. (2024). \textit{Guardian}. ISSTA, 958–970.}
-        \item KAT: kiểm thử API nhận biết phụ thuộc\src{5}{Le, Q.-T. et al. (2024). \textit{KAT: Dependency-aware automated API testing with LLMs}. Preprint.}
-        \item Constraint Mining: dùng LLM khai thác và kiểm thử ràng buộc API.\src{6}{Huynh, H., Le, Q.-T., Nguyen, T. N., \& Nguyen, V. (2024). \textit{Using LLM for mining and testing constraints in API testing}. ASE (EA), 2486–2487.}
-    \end{BulletTight}
-\end{frame}
-% ======================================================
-% SLIDE 7: HỆ LLM ĐƠN TÁC TỬ
-% ======================================================
-\begin{frame}
-    \frametitle{Giới thiệu tổng quan}
-    \SubTitle {Các nghiên cứu tiêu biểu ứng dụng LLM - đơn tác tử}
-
-    \begin{BulletTight}
-        \item Dễ triển khai, hiệu quả cho các tác vụ riêng lẻ.
-        \item Có khả năng hiểu ngữ cảnh và sinh test hợp lý.
-        \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
-        LLM tạo bước tiến lớn trong tự động hóa kiểm thử.
-        \item Một tác tử xử lý toàn bộ quy trình, thiếu phối hợp.%
-        \src{7}{Fan, Y. et al. (2024). Can cooperative multi-agent reinforcement learning boost automatic web testing? \textit{ASE}, 14–26.}
-        \item Dễ lặp hành động, bỏ sót lỗi hoặc “ảo giác” mục tiêu.%
-        \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
-        Thiếu phối hợp — chưa phù hợp cho kiểm thử quy mô lớn, đa nhiệm.
-    \end{BulletTight}
-\end{frame}
-
-% ======================================================
-% SLIDE 8: HỆ ĐA TÁC TỬ – NGHIÊN CỨU TIÊU BIỂU
-% ======================================================
-\begin{frame}
-    \frametitle{Giới thiệu tổng quan}
-    \SubTitle{Các nghiên cứu tiêu biểu ứng dụng LLM - đa tác tử}
-
-    \begin{BulletTight}
-        \item Mô phỏng phát triển đa vai trò, nền tảng cho cộng tác tác tử.%
-        \src{8}{Hong, S. et al. (2024). MetaGPT: Meta programming for multi-agent collaboration. \textit{ICLR}.}
-        \item Phối hợp đa tác tử tăng bao phủ và hiệu quả kiểm thử.%
-        \src{9}{Feng, S. et al. (2025). Can cooperative multi-agent RL boost automatic web testing? \textit{ASE}.}
-        \item Cộng tác nhiều LLM giảm trùng lặp, nâng chất lượng test.%
-        \src{10}{He, J. et al. (2025). LLM-based multi-agent systems. \textit{TOSEM}.}
-        \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
-        Hệ đa tác tử mở ra tiềm năng lớn cho kiểm thử tự động.
-    \end{BulletTight}
-\end{frame}
-
-% ---- META GPT: slide riêng với ảnh lớn ----
-\begin{frame}
-    \frametitle{Giới thiệu tổng quan}
-
     \centering
-    \includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio]{images/meta_gpt}
+    \includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio]{images/img}
 
-    \vspace{0.5em}
-    \small \textbf{Hình 2:} Kiến trúc MetaGPT mô phỏng phát triển phần mềm đa vai trò.
+    \vspace{0.6em}
+    \small \textbf{Hình 2:} Những thách thức trong kiểm thử phần mềm hiện đại
+\end{frame}
+% =======================================================
+
+% ======================================================
+% SLIDE: Các hướng nghiên cứu kiểm thử tự động (1/2)
+% ======================================================
+\begin{frame}
+    \frametitle{Các hướng nghiên cứu kiểm thử tự động}
+
+    \begin{BulletTight}
+
+        \item \textbf{Kiểm thử giao diện (UI Testing)}
+        \begin{itemize}
+            \item RL điều hướng UI và tối ưu hành vi test.%
+            \src{1}{Nguyen, A. et al. (2019). RL for UI test prioritization. PROMISE.}
+            \item LLM khám phá UI theo hành vi người dùng.%
+            \src{2}{Ran, D. et al. (2024). Guardian. ISSTA.}
+            \item Multi-agent tăng bao phủ UI.%
+            \src{3}{Feng, S. et al. (2025). Cooperative agents for web testing. ASE.}
+        \end{itemize}
+
+        \vspace{0.4em}
+        \item \textbf{Kiểm thử API}
+        \begin{itemize}
+            \item LLM khai phá ràng buộc API \& sinh test.%
+            \src{4}{Huynh, H., Le, Q. T. et al. (2024). KAT for API testing. ASE.}
+        \end{itemize}
+
+        \vspace{0.4em}
+        \item \textbf{Sửa lỗi tự động (Program Repair)}
+        \begin{itemize}
+            \item LLM hiểu mã \& sửa lỗi logic.%
+            \src{5}{Jin, M. et al. (2023). InferFix. ESEC/FSE.}
+        \end{itemize}
+
+    \end{BulletTight}
 
 \end{frame}
 
 % ======================================================
-% SLIDE 9: NHẬN ĐỊNH CHUNG
+% SLIDE: Các hướng nghiên cứu kiểm thử tự động (2/2)
 % ======================================================
 \begin{frame}
-    \frametitle{Giới thiệu tổng quan}
-    \SubTitle{Các nghiên cứu LLM–đa tác tử: kết quả \& hạn chế chính}
+    \frametitle{Các hướng nghiên cứu kiểm thử tự động (tiếp)}
 
     \begin{BulletTight}
-        \item Đa tác tử tăng bao phủ và throughput kiểm thử.\src{11}{Feng, S., Wang, S., Fei, Z., Qin, Y., Li, H., \& Liu, Y. (2025). Can cooperative multi-agent RL boost automatic web testing? \textit{ASE}, 14–26.}
-        \item Cộng tác giữa tác tử giảm trùng lặp, nâng chất lượng.\src{12}{He, J., Chen, Z., Zhou, K., \& Yu, Y. (2025). LLM-based multi-agent systems. \textit{ACM TOSEM}.}
-        \item Giao tiếp ngôn ngữ dễ lệch ngữ nghĩa, thiếu đồng thuận.
-        \item Cần cơ chế điều phối ổn định và phản hồi con người (HITL) để đảm bảo độ tin cậy.
-        \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}] Tiềm năng lớn; trọng tâm cần giải quyết là giao tiếp, điều phối và HITL.
+
+        \item \textbf{Hệ đa tác tử kiểm thử phần mềm}
+        \begin{itemize}
+            \item Phân vai trò và cộng tác tác tử.%
+            \src{6}{Hong, S. et al. (2024). MetaGPT. ICLR.}
+            \item Đồng thuận giảm ảo giác.%
+            \src{7}{Xu, Q. et al. (2025). Consensus agents. arXiv.}
+        \end{itemize}
+
+        \vspace{0.6em}
+        \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
+        \textbf{Xu hướng chung:}
+        Đơn tác tử \(\rightarrow\) đa tác tử \(\rightarrow\) độ tin cậy cao hơn.
+
     \end{BulletTight}
+
+\end{frame}
+
+% ======================================================
+% SLIDE: Điểm mạnh của kiểm thử tự động
+% ======================================================
+\begin{frame}
+    \frametitle{Kiểm thử tự động}
+
+
+    \begin{BulletTight}
+        \item Tăng tốc độ kiểm thử, rút ngắn chu kỳ phát triển.
+        \item Giảm chi phí nhân lực, hạn chế lỗi do con người.%
+        \src{1}{Boehm, B. (1981). Software engineering economics.}
+        \item Đảm bảo tính lặp lại, ổn định và bao phủ cao hơn kiểm thử thủ công.
+        \item Phù hợp DevOps/CI-CD, hỗ trợ kiểm thử liên tục.
+        \item Mở rộng sang sử dụng RL/LLM để sinh test thông minh.%
+        \src{2}{Nguyen, A. et al. (2019). RL for UI testing. PROMISE.}
+    \end{BulletTight}
+
+\end{frame}
+
+
+% ======================================================
+% SLIDE: Hạn chế của kiểm thử tự động
+% ======================================================
+\begin{frame}
+    \frametitle{Kiểm thử tự động — Hạn chế hiện hữu}
+
+    \begin{BulletTight}
+        \item Phụ thuộc kịch bản cố định — khó thích ứng khi hệ thống thay đổi nhanh.
+        \item Thiếu hiểu ngữ cảnh sâu; khó xử lý UI phức tạp, edge cases.%
+        \src{3}{Ran, D. et al. (2024). Guardian. ISSTA.}
+        \item Chi phí xây dựng & bảo trì test script cao.
+        \item RL/LLM đơn tác tử còn thiếu ổn định, dễ ảo giác, thiếu đồng thuận.%
+        \src{4}{Xu, Q. et al. (2025). Consensus agents. arXiv.}
+        \item Chưa tận dụng hiệu quả tri thức con người (HITL) khi cần giám sát chất lượng.
+    \end{BulletTight}
+
 \end{frame}
