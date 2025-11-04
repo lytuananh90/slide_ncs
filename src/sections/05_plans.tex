@@ -3,31 +3,38 @@
 % ======================================================
 \begin{frame}
     \frametitle{Kế hoạch thực hiện – Giai đoạn 1}
-
+    \SubTitle{Khảo sát và định hình hướng nghiên cứu}
     \begin{BulletTight}
-        \item Tìm hiểu về các nghiên cứu LLM và hệ đa tác tử, phân tích các hướng tiếp cận và công cụ kiểm thử hiện có.
-        \item Xác định vấn đề, khoảng trống và mục tiêu nghiên cứu.
-        \item Xác định các vai trò tác tử và cơ chế giao tiếp, phối hợp giữa các tác tử.
-        \item Thiết kế kiến trúc tổng thể; chuẩn bị dữ liệu và baseline đánh giá.
+        \item Khảo sát nền tảng
+        \begin{itemize}
+            \item Tổng hợp nghiên cứu LLM \& hệ đa tác tử
+            \item Đánh giá ưu/nhược điểm, chọn hướng tiếp cận phù hợp
+            \item Xác định đối tượng, phạm vi nghiên cứu
+        \end{itemize}
+        \item Thiết kế kiến trúc hệ thống
+        \begin{itemize}
+            \item Xác định vai trò tác tử \& cơ chế phối hợp
+            \item Đề xuất cơ chế giao tiếp, xử lý mâu thuẫn \& HITL
+        \end{itemize}
+        \item Xác định tiêu chí đánh giá; chuẩn bị dataset \& baseline
         \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
-        Kết quả: tổng quan nghiên cứu, đề xuất hệ thống, kế hoạch chi tiết;
-        \textbf{01 bài báo hội nghị}.
+        Kiến trúc đề xuất, tiêu chí đánh giá, kế hoạch triển khai
     \end{BulletTight}
 \end{frame}
 
-% ======================================================
-% SLIDE: KẾ HOẠCH THỰC HIỆN – GIAI ĐOẠN 2
-% ======================================================
 \begin{frame}
     \frametitle{Kế hoạch thực hiện – Giai đoạn 2}
+    \SubTitle{Phát triển hệ thống và thử nghiệm}
+
     \begin{BulletTight}
-        \item Phát triển các tác tử: Planner, API/UI, Evaluator, Coordinator, HITL\ldots
-        \item Triển khai cơ chế giao tiếp, phối hợp giữa các tác tử và con người
-        \item Đi sâu nghiên cứu một tác tử đại diện (Vd: API/UI)
-        \item Tối ưu hiệu năng, ghi nhận lỗi, hạn chế và cải tiến.
+        \item Xây dựng các tác tử chính (Planner, UI/API, Evaluator, Coordinator, HITL)
+        \item Thiết lập cơ chế giao tiếp \& phối hợp người–tác tử
+        \item Tối ưu 01 tác tử trọng tâm (UI hoặc API) để kiểm chứng tính khả thi \& hiệu quả
+        \item Thực nghiệm, đo hiệu năng, tinh chỉnh hệ thống
         \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
-        Kết quả: nguyên mẫu hệ thống; \textbf{02 bài báo hội nghị}.
+        Nguyên mẫu hệ thống; \textbf{02 bài báo hội nghị}
     \end{BulletTight}
+
 \end{frame}
 
 % ======================================================
@@ -35,12 +42,13 @@
 % ======================================================
 \begin{frame}
     \frametitle{Kế hoạch thực hiện – Giai đoạn 3}
+    \SubTitle {Hoàn thiện và củng cố}
     \begin{BulletTight}
         \item Mở rộng thực nghiệm; đo hiệu năng \& độ tin cậy.
         \item Tối ưu hóa cơ chế phối hợp, giao tiếp.
         \item Tối ưu quy trình HITL và giảm hallucination.
-        \item Tinh chỉnh \textit{tác tử trọng tâm}
-        \item Chuẩn hoá hệ thống; hoàn thiện luận án.
+        \item Cải tiến tác tử trọng tâm.
+        \item Chuẩn hoá hệ thống, tài liệu, hoàn thiện luận án.
         \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
         Kết quả: hệ thống hoàn chỉnh; \textbf{01 bài báo tạp chí}.
     \end{BulletTight}

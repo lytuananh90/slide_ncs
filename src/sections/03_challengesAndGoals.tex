@@ -4,15 +4,13 @@
 \begin{frame}
     \frametitle{Thách thức của đề tài}
     \begin{BulletTight}
-        \item \textbf{Ảo giác (Hallucination):}
-        Tác tử sinh phản hồi sai lệch%
 
         \item \textbf{Giao tiếp và phối hợp:}
         Dễ mất ngữ cảnh, lan truyền lỗi giữa các tác tử.
-
+        \item \textbf{Ảo giác (Hallucination):}
+        Tác tử sinh phản hồi sai lệch%
         \item \textbf{HITL:}
         Phản hồi con người thiên kiến, giám sát tốn chi phí.%
-
         \item  Automation testing thường xử lý các luồng công việc phổ thông, những luồng phức tạp còn hạn chế
 
     \end{BulletTight}
@@ -27,68 +25,46 @@
     \begin{BulletTight}
         \item Xây dựng hệ đa tác tử tích hợp LLM cho kiểm thử tự động.
         \item Xác định vai trò và cơ chế phối hợp.
-        \item Nghiên cứu sâu một tác tử tiêu biểu để tối ưu hiệu năng, đảm bảo chiều sâu đề tài
         \item Cải thiện giao tiếp và giảm lỗi trong kiểm thử
         \item Đề xuất cơ chế HITL hiệu quả, nâng cao hiệu quả làm việc giữa người và tác tử
+        \item Nghiên cứu sâu một tác tử tiêu biểu để tối ưu hiệu năng, đảm bảo chiều sâu đề tài
 
     \end{BulletTight}
 \end{frame}
 
-% ======================================================
-% SLIDE: ĐỐI TƯỢNG VÀ PHẠM VI NGHIÊN CỨU
-% ======================================================
-\begin{frame}
-    \frametitle{Đối tượng và phạm vi nghiên cứu}
 
-    \begin{BulletTight}
-        \item \textbf{Đối tượng nghiên cứu:}
-        \begin{itemize}
-            \setlength{\itemsep}{0.3em}
-            \item Hệ thống đa tác tử (Multi-Agent System) tích hợp mô hình ngôn ngữ lớn (LLM) cho kiểm thử phần mềm tự động.
-            \item Các tác tử chính: Planner, UI, API, Evaluator, Coordinator, HITL Agent\ldots
-            \item Cơ chế phối hợp, giao tiếp và phản hồi giữa các tác tử trong quá trình kiểm thử.
-        \end{itemize}
-
-        \vspace{0.7em}
-        \item \textbf{Phạm vi nghiên cứu:}
-        \begin{itemize}
-            \setlength{\itemsep}{0.3em}
-            \item Ứng dụng cho kiểm thử phần mềm web và di động.
-            \item Tập trung phát triển và phân tích sâu \textbf{một tác tử tiêu biểu} nhằm tối ưu hiệu năng và khả năng phối hợp.
-
-        \end{itemize}
-
-
-    \end{BulletTight}
-\end{frame}
 % ------------------------------------------------------
-% SLIDE: Quy trình nghiên cứu và thực hiện (bản rút gọn)
+% SLIDE: Phương pháp nghiên cứu (rõ ràng & đúng tiến độ)
 % ------------------------------------------------------
 \begin{frame}
     \frametitle{Phương pháp nghiên cứu}
 
-
     \begin{BulletTight}
-        \item \textbf{Khảo sát và phân tích}
+
+        \item \textbf{Khảo sát tổng quan}
         \begin{itemize}
-            \item Tổng hợp nghiên cứu trong/ngoài nước, xác định khoảng trống và hướng nghiên cứu
+            \item Tổng hợp và đánh giá các mô hình LLM/đa tác tử đã công bố -> \textbf{chọn hướng tiếp cận tối ưu} \\
         \end{itemize}
 
-        \item \textbf{Thiết kế hệ thống}
+        \item \textbf{Thiết kế hệ thống (Conceptual Design)}
         \begin{itemize}
-            \item Xây dựng kiến trúc đa tác tử tích hợp LLM, xác định vai trò và cơ chế giao tiếp
+            \item Định nghĩa vai trò tác tử (Planner, Tester, Evaluator, Coordinator...)
+            \item Thiết kế luồng tương tác \& cơ chế giao tiếp, xử lý xung đột
+            \item Cách thức tích hợp HITL
         \end{itemize}
 
-        \item \textbf{Phát triển framework}
+        \item \textbf{Xây dựng framework (Implementation)}
         \begin{itemize}
-            \item Triển khai các agent cốt lõi (Planner, UI, API, Coordinator, \ldots) và tích hợp HITL
+            \item Cài đặt tác tử cốt lõi theo kiến trúc đề xuất
+            \item Tích hợp LLM, bộ nhớ RAG, HITL, logging/feedback
         \end{itemize}
 
-        \item \textbf{Thực nghiệm và đánh giá}
+        \item \textbf{Thực nghiệm & đánh giá}
         \begin{itemize}
-            \item Kiểm thử trên bài toán thực tế, đo hiệu năng, độ chính xác, ổn định
-            \item So sánh với baseline (LLM đơn tác tử và đa tác tử)
+            \item Kiểm thử trên ứng dụng web/mobile thực tế
+            \item So sánh với baseline: \textit{LLM đơn tác tử vs đa tác tử}
+            \item Đo lường: bao phủ, độ chính xác, chi phí, tốc độ, độ ổn định
         \end{itemize}
+
     \end{BulletTight}
-
 \end{frame}

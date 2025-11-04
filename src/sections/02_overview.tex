@@ -5,128 +5,66 @@
     \frametitle{Giới thiệu tổng quan}
 
     \centering
-    % 👉 Giảm tỉ lệ hình để đủ chỗ cho nội dung
-    \includegraphics[width=0.9\linewidth,height=0.50\textheight,keepaspectratio]{images/manual_auto}
+    \includegraphics[width=0.95\linewidth,height=0.58\textheight,keepaspectratio]{images/intro_testing}
 
     \vspace{0.4em}
-    \small \textbf{Hình 1:} Các phương pháp kiểm thử trong phát triển phần mềm hiện đại
+    \small \textbf{Hình 1:} Kiểm thử phần mềm
 
-    \vspace{0.6em}
+    \vspace{0.5em}
     \begin{BulletTight}
-        \item Kiểm thử là giai đoạn then chốt đảm bảo chất lượng phần mềm.
-        \item Chi phí sửa lỗi sau phát hành cao gấp 10–100 lần phát hiện sớm.\src{1}{Boehm, B. W. (1981). \textit{Software engineering economics}. Prentice-Hall.}
+        \item Chi phí sửa lỗi sau phát hành cao gấp 10–100 lần phát hiện sớm.%
+        \src{1}{Boehm, B. W. (1981). \textit{Software engineering economics}. Prentice-Hall.}
     \end{BulletTight}
-
 \end{frame}
-% =======================================================
-
-% =============== SLIDE: Thách thức của kiểm thử hiện đại ===============
-
-\begin{frame}
-    \frametitle{Giới thiệu tổng quan}
-    \centering
-    \includegraphics[width=\linewidth,height=0.70\textheight,keepaspectratio]{images/img}
-
-    \vspace{0.6em}
-    \small \textbf{Hình 2:} Những thách thức trong kiểm thử phần mềm hiện đại
-\end{frame}
-% =======================================================
 
 % ======================================================
 % SLIDE: Các hướng nghiên cứu kiểm thử tự động (1/2)
 % ======================================================
 \begin{frame}
-    \frametitle{Các hướng nghiên cứu kiểm thử tự động}
+    \frametitle{Giới thiệu tổng quan}
+    \SubTitle{Các hướng nghiên cứu kiểm thử tự động}
 
     \begin{BulletTight}
 
         \item \textbf{Kiểm thử giao diện (UI Testing)}
         \begin{itemize}
-            \item RL điều hướng UI và tối ưu hành vi test.%
-            \src{1}{Nguyen, A. et al. (2019). RL for UI test prioritization. PROMISE.}
-            \item LLM khám phá UI theo hành vi người dùng.%
-            \src{2}{Ran, D. et al. (2024). Guardian. ISSTA.}
-            \item Multi-agent tăng bao phủ UI.%
-            \src{3}{Feng, S. et al. (2025). Cooperative agents for web testing. ASE.}
+            \item RL điều hướng UI \& ưu tiên test — Nguyen et al., 2019 (PROMISE)
+            \item LLM khám phá UI theo hành vi — Ran et al., 2024 (ISSTA)
+            \item Đa tác tử RL tăng bao phủ UI — Fan et al., 2024 (ASE)
         \end{itemize}
 
-        \vspace{0.4em}
+        \vspace{0.3em}
         \item \textbf{Kiểm thử API}
         \begin{itemize}
-            \item LLM khai phá ràng buộc API \& sinh test.%
-            \src{4}{Huynh, H., Le, Q. T. et al. (2024). KAT for API testing. ASE.}
+            \item LLM khai phá ràng buộc API \& sinh test — Huynh et al., 2024 (ASE EA)
         \end{itemize}
 
-        \vspace{0.4em}
+        \vspace{0.3em}
         \item \textbf{Sửa lỗi tự động (Program Repair)}
         \begin{itemize}
-            \item LLM hiểu mã \& sửa lỗi logic.%
-            \src{5}{Jin, M. et al. (2023). InferFix. ESEC/FSE.}
+            \item LLM hiểu mã \& sửa lỗi logic — Jin et al., 2023 (ESEC/FSE)
         \end{itemize}
 
     \end{BulletTight}
-
 \end{frame}
 
-% ======================================================
-% SLIDE: Các hướng nghiên cứu kiểm thử tự động (2/2)
-% ======================================================
-\begin{frame}
-    \frametitle{Các hướng nghiên cứu kiểm thử tự động (tiếp)}
+%% ======================================================
+%% SLIDE: Tiềm năng của kiểm thử tự động
+%% ======================================================
+%\begin{frame}
+%    \frametitle{Giới thiệu tổng quan}
+%    \SubTitle{Tiềm năng của kiểm thử tự động}
+%
+%    \begin{BulletTight}
+%        \item Tăng tốc độ kiểm thử, rút ngắn chu kỳ phát triển.
+%        \item Giảm chi phí nhân lực, hạn chế lỗi con người.%
+%        \src{1}{Boehm, B. (1981). Software engineering economics.}
+%        \item Đảm bảo tính lặp lại, ổn định và bao phủ cao hơn kiểm thử thủ công.
+%        \item Tích hợp chặt chẽ với DevOps/CI-CD, hỗ trợ kiểm thử liên tục.
+%        \item RL tối ưu hành vi kiểm thử, tăng bao phủ.%
+%        \src{2}{Nguyen, A. et al. (2019). RL for UI testing. PROMISE.}
+%        \item \textbf{LLM hiểu ngữ cảnh \& sinh test thông minh}, hỗ trợ phát hiện lỗi logic và UI phức tạp.%
+%        \src{3}{Ran, D. et al. (2024). Guardian: LLM-based UI exploration. ISSTA.}
+%    \end{BulletTight}
+%\end{frame}
 
-    \begin{BulletTight}
-
-        \item \textbf{Hệ đa tác tử kiểm thử phần mềm}
-        \begin{itemize}
-            \item Phân vai trò và cộng tác tác tử.%
-            \src{6}{Hong, S. et al. (2024). MetaGPT. ICLR.}
-            \item Đồng thuận giảm ảo giác.%
-            \src{7}{Xu, Q. et al. (2025). Consensus agents. arXiv.}
-        \end{itemize}
-
-        \vspace{0.6em}
-        \item[\raise0.2ex\hbox{\color{KHTN_BLUE!85}\scriptsize\faArrowRight}]
-        \textbf{Xu hướng chung:}
-        Đơn tác tử \(\rightarrow\) đa tác tử \(\rightarrow\) độ tin cậy cao hơn.
-
-    \end{BulletTight}
-
-\end{frame}
-
-% ======================================================
-% SLIDE: Điểm mạnh của kiểm thử tự động
-% ======================================================
-\begin{frame}
-    \frametitle{Kiểm thử tự động}
-
-
-    \begin{BulletTight}
-        \item Tăng tốc độ kiểm thử, rút ngắn chu kỳ phát triển.
-        \item Giảm chi phí nhân lực, hạn chế lỗi do con người.%
-        \src{1}{Boehm, B. (1981). Software engineering economics.}
-        \item Đảm bảo tính lặp lại, ổn định và bao phủ cao hơn kiểm thử thủ công.
-        \item Phù hợp DevOps/CI-CD, hỗ trợ kiểm thử liên tục.
-        \item Mở rộng sang sử dụng RL/LLM để sinh test thông minh.%
-        \src{2}{Nguyen, A. et al. (2019). RL for UI testing. PROMISE.}
-    \end{BulletTight}
-
-\end{frame}
-
-
-% ======================================================
-% SLIDE: Hạn chế của kiểm thử tự động
-% ======================================================
-\begin{frame}
-    \frametitle{Kiểm thử tự động — Hạn chế hiện hữu}
-
-    \begin{BulletTight}
-        \item Phụ thuộc kịch bản cố định — khó thích ứng khi hệ thống thay đổi nhanh.
-        \item Thiếu hiểu ngữ cảnh sâu; khó xử lý UI phức tạp, edge cases.%
-        \src{3}{Ran, D. et al. (2024). Guardian. ISSTA.}
-        \item Chi phí xây dựng & bảo trì test script cao.
-        \item RL/LLM đơn tác tử còn thiếu ổn định, dễ ảo giác, thiếu đồng thuận.%
-        \src{4}{Xu, Q. et al. (2025). Consensus agents. arXiv.}
-        \item Chưa tận dụng hiệu quả tri thức con người (HITL) khi cần giám sát chất lượng.
-    \end{BulletTight}
-
-\end{frame}
