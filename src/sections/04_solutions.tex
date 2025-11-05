@@ -1,3 +1,39 @@
+% ------------------------------------------------------
+% SLIDE: Phương pháp nghiên cứu (rõ ràng & đúng tiến độ)
+% ------------------------------------------------------
+\begin{frame}
+    \frametitle{Phương pháp nghiên cứu}
+
+    \begin{BulletTight}
+
+        \item \textbf{Khảo sát tổng quan}
+        \begin{itemize}
+            \item Tổng hợp và đánh giá các mô hình LLM/đa tác tử đã công bố -> \textbf{chọn hướng tiếp cận tối ưu} \\
+        \end{itemize}
+
+        \item \textbf{Thiết kế hệ thống (Conceptual Design)}
+        \begin{itemize}
+            \item Định nghĩa vai trò tác tử (Planner, Tester, Evaluator, Coordinator...)
+            \item Thiết kế luồng tương tác \& cơ chế giao tiếp, xử lý xung đột
+            \item Cách thức tích hợp HITL
+        \end{itemize}
+
+        \item \textbf{Xây dựng framework (Implementation)}
+        \begin{itemize}
+            \item Cài đặt tác tử cốt lõi theo kiến trúc đề xuất
+            \item Tích hợp LLM, bộ nhớ RAG, HITL, logging/feedback
+        \end{itemize}
+
+        \item \textbf{Thực nghiệm & đánh giá}
+        \begin{itemize}
+            \item Kiểm thử trên ứng dụng web/mobile thực tế
+            \item So sánh với baseline: \textit{LLM đơn tác tử vs đa tác tử}
+            \item Đo lường: bao phủ, độ chính xác, chi phí, tốc độ, độ ổn định
+        \end{itemize}
+
+    \end{BulletTight}
+\end{frame}
+
 % =============== SLIDE: KIẾN TRÚC ĐỀ XUẤT ===============
 
 \begin{frame}

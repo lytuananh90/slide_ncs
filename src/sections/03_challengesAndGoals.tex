@@ -1,70 +1,46 @@
 % ======================================================
-% SLIDE 9: THÁCH THỨC CỦA ĐỀ TÀI
+% SLIDE CỦA BẠN BẮT ĐẦU TỪ ĐÂY
+% (Nội dung không thay đổi)
 % ======================================================
+
 \begin{frame}
-    \frametitle{Thách thức của đề tài}
-    \begin{BulletTight}
-
-        \item \textbf{Giao tiếp và phối hợp:}
-        Dễ mất ngữ cảnh, lan truyền lỗi giữa các tác tử.
-        \item \textbf{Ảo giác (Hallucination):}
-        Tác tử sinh phản hồi sai lệch%
-        \item \textbf{HITL:}
-        Phản hồi con người thiên kiến, giám sát tốn chi phí.%
-        \item  Automation testing thường xử lý các luồng công việc phổ thông, những luồng phức tạp còn hạn chế
-
-    \end{BulletTight}
+    \frametitle{Thách thức}
+    \centering
+    \includegraphics[width=\linewidth,height=0.8\textheight,keepaspectratio]{images/thachthuc}
+    \vspace{0.8em}
+    \small \textbf{Bảng 1:} Các thách thức  trong kiểm thử tự động sử dụng LLM hiện nay.
 \end{frame}
+% ======================================================
+% KẾT THÚC SLIDE CỦA BẠN
+% ======================================================
+
 
 % ======================================================
-% SLIDE 10: MỤC TIÊU NGHIÊN CỨU
+% SLIDE: MỤC TIÊU NGHIÊN CỨU
 % ======================================================
 \begin{frame}
     \frametitle{Mục tiêu nghiên cứu}
 
     \begin{BulletTight}
-        \item Xây dựng hệ đa tác tử tích hợp LLM cho kiểm thử tự động.
-        \item Xác định vai trò và cơ chế phối hợp.
-        \item Cải thiện giao tiếp và giảm lỗi trong kiểm thử
-        \item Đề xuất cơ chế HITL hiệu quả, nâng cao hiệu quả làm việc giữa người và tác tử
-        \item Nghiên cứu sâu một tác tử tiêu biểu để tối ưu hiệu năng, đảm bảo chiều sâu đề tài
+        \item \textbf{Xây dựng hệ đa tác tử tích hợp LLM cho kiểm thử tự động}
+        \begin{itemize}
+            \item Khám phá tốt hơn trên không gian trạng thái lớn
+            \item Phối hợp tác vụ hiệu quả, tránh trùng lặp
+            \item Chuyên môn hoá tác tử → đầu vào chính xác, phát hiện lỗi sâu
+            \item Linh hoạt thay đổi LLM theo vai trò
+            \item Giảm lỗi suy luận nhờ SOP \& kiểm tra chéo
+        \end{itemize}
 
+        \vspace{0.4em}
+        \item \textbf{Thiết kế cơ chế HITL tối ưu}
+        \begin{itemize}
+            \item Hỗ trợ bài toán oracle khó
+            \item Giám sát \& điều chỉnh hành vi tác tử
+            \item Tăng tốc \& tăng tỷ lệ phát hiện lỗi
+            \item Học từ phản hồi người dùng hiệu quả (ít nhãn)
+            \item Duy trì phản hồi xuyên suốt vòng đời kiểm thử
+            \item Tối ưu chi phí ↔ hiệu quả
+        \end{itemize}
     \end{BulletTight}
 \end{frame}
 
-
-% ------------------------------------------------------
-% SLIDE: Phương pháp nghiên cứu (rõ ràng & đúng tiến độ)
-% ------------------------------------------------------
-\begin{frame}
-    \frametitle{Phương pháp nghiên cứu}
-
-    \begin{BulletTight}
-
-        \item \textbf{Khảo sát tổng quan}
-        \begin{itemize}
-            \item Tổng hợp và đánh giá các mô hình LLM/đa tác tử đã công bố -> \textbf{chọn hướng tiếp cận tối ưu} \\
-        \end{itemize}
-
-        \item \textbf{Thiết kế hệ thống (Conceptual Design)}
-        \begin{itemize}
-            \item Định nghĩa vai trò tác tử (Planner, Tester, Evaluator, Coordinator...)
-            \item Thiết kế luồng tương tác \& cơ chế giao tiếp, xử lý xung đột
-            \item Cách thức tích hợp HITL
-        \end{itemize}
-
-        \item \textbf{Xây dựng framework (Implementation)}
-        \begin{itemize}
-            \item Cài đặt tác tử cốt lõi theo kiến trúc đề xuất
-            \item Tích hợp LLM, bộ nhớ RAG, HITL, logging/feedback
-        \end{itemize}
-
-        \item \textbf{Thực nghiệm & đánh giá}
-        \begin{itemize}
-            \item Kiểm thử trên ứng dụng web/mobile thực tế
-            \item So sánh với baseline: \textit{LLM đơn tác tử vs đa tác tử}
-            \item Đo lường: bao phủ, độ chính xác, chi phí, tốc độ, độ ổn định
-        \end{itemize}
-
-    \end{BulletTight}
-\end{frame}
